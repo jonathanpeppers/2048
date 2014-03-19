@@ -97,6 +97,7 @@
   <ItemGroup>
     <None Include="Info.plist" />
     <None Include="Entitlements.plist" />
+    <None Include="Html\howto.html" />
   </ItemGroup>
   <ItemGroup>
     <Compile Include="Main.cs" />
