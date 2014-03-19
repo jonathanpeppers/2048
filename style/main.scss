@@ -297,6 +297,12 @@ hr {
         &.tile-position-#{$x}-#{$y} {
           $xPos: floor(($tile-size + $grid-spacing) * ($x - 1));
           $yPos: floor(($tile-size + $grid-spacing) * ($y - 1));
+          @if $x == 3 or $x == 4 {
+          	$xPos: $xPos - 2;
+          }
+          @if $y == 3 or $y == 4 {
+          	$yPos: $yPos - 2;
+          }
           @include transform(translate($xPos, $yPos));
         }
       }
