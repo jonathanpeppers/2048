@@ -98,6 +98,12 @@
     <None Include="Info.plist" />
     <None Include="Entitlements.plist" />
     <None Include="Html\howto.html" />
+    <None Include="..\..\style\helpers.scss">
+      <Link>Html\style\helpers.scss</Link>
+    </None>
+    <None Include="..\..\style\main.scss">
+      <Link>Html\style\main.scss</Link>
+    </None>
   </ItemGroup>
   <ItemGroup>
     <Compile Include="Main.cs" />
