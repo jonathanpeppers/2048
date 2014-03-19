@@ -15,11 +15,12 @@ namespace TwentyFourtyEight
         {
             base.ViewDidLoad();
 
+            _webView.ScrollView.ScrollEnabled =
+                _webView.ScrollView.Bounces = false;
             _webView.LoadError += (sender, e) =>
             {
                 Console.WriteLine("LoadError: " + e.Error.LocalizedDescription);
             };
-
         }
 
         public override void ViewWillAppear(bool animated)
