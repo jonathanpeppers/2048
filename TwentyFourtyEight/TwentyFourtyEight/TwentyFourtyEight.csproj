@@ -1,0 +1,180 @@
+<?xml version="1.0" encoding="utf-8"?>
+<Project DefaultTargets="Build" ToolsVersion="4.0" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <PropertyGroup>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">iPhoneSimulator</Platform>
+    <ProductVersion>10.0.0</ProductVersion>
+    <SchemaVersion>2.0</SchemaVersion>
+    <ProjectGuid>{0D7C535A-82A2-4A83-BFCD-486A0A38F108}</ProjectGuid>
+    <ProjectTypeGuids>{6BC8ED88-2882-458C-8E55-DFD12B67127B};{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}</ProjectTypeGuids>
+    <OutputType>Exe</OutputType>
+    <RootNamespace>TwentyFourtyEight</RootNamespace>
+    <IPhoneResourcePrefix>Resources</IPhoneResourcePrefix>
+    <AssemblyName>TwentyFourtyEight</AssemblyName>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|iPhoneSimulator' ">
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>full</DebugType>
+    <Optimize>false</Optimize>
+    <OutputPath>bin\iPhoneSimulator\Debug</OutputPath>
+    <DefineConstants>DEBUG;__MOBILE__;__IOS__;</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+    <ConsolePause>false</ConsolePause>
+    <MtouchLink>None</MtouchLink>
+    <CodesignEntitlements>Entitlements.plist</CodesignEntitlements>
+    <MtouchDebug>true</MtouchDebug>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|iPhoneSimulator' ">
+    <DebugType>full</DebugType>
+    <Optimize>true</Optimize>
+    <OutputPath>bin\iPhoneSimulator\Release</OutputPath>
+    <DefineConstants>__MOBILE__;__IOS__;</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+    <MtouchLink>None</MtouchLink>
+    <ConsolePause>false</ConsolePause>
+    <CodesignEntitlements>Entitlements.plist</CodesignEntitlements>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|iPhone' ">
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>full</DebugType>
+    <Optimize>false</Optimize>
+    <OutputPath>bin\iPhone\Debug</OutputPath>
+    <DefineConstants>DEBUG;__MOBILE__;__IOS__;</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+    <ConsolePause>false</ConsolePause>
+    <CodesignEntitlements>Entitlements.plist</CodesignEntitlements>
+    <MtouchDebug>true</MtouchDebug>
+    <CodesignKey>iPhone Developer</CodesignKey>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|iPhone' ">
+    <DebugType>full</DebugType>
+    <Optimize>true</Optimize>
+    <OutputPath>bin\iPhone\Release</OutputPath>
+    <DefineConstants>__MOBILE__;__IOS__;</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+    <CodesignEntitlements>Entitlements.plist</CodesignEntitlements>
+    <ConsolePause>false</ConsolePause>
+    <CodesignKey>iPhone Developer</CodesignKey>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Ad-Hoc|iPhone' ">
+    <DebugType>full</DebugType>
+    <Optimize>true</Optimize>
+    <OutputPath>bin\iPhone\Ad-Hoc</OutputPath>
+    <DefineConstants>__MOBILE__;__IOS__;</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+    <ConsolePause>false</ConsolePause>
+    <CodesignEntitlements>Entitlements.plist</CodesignEntitlements>
+    <BuildIpa>true</BuildIpa>
+    <CodesignProvision>Automatic:AdHoc</CodesignProvision>
+    <CodesignKey>iPhone Distribution</CodesignKey>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'AppStore|iPhone' ">
+    <DebugType>full</DebugType>
+    <Optimize>true</Optimize>
+    <OutputPath>bin\iPhone\AppStore</OutputPath>
+    <DefineConstants>__MOBILE__;__IOS__;</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+    <ConsolePause>false</ConsolePause>
+    <CodesignEntitlements>Entitlements.plist</CodesignEntitlements>
+    <CodesignProvision>Automatic:AppStore</CodesignProvision>
+    <CodesignKey>iPhone Distribution</CodesignKey>
+  </PropertyGroup>
+  <ItemGroup>
+    <Reference Include="System" />
+    <Reference Include="System.Xml" />
+    <Reference Include="System.Core" />
+    <Reference Include="monotouch" />
+  </ItemGroup>
+  <ItemGroup>
+    <BundleResource Include="Resources\Default-568h%402x.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Info.plist" />
+    <None Include="Entitlements.plist" />
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="Main.cs" />
+    <Compile Include="AppDelegate.cs" />
+    <Compile Include="Controllers\MainController.cs" />
+    <Compile Include="Controllers\MainController.designer.cs">
+      <DependentUpon>MainController.cs</DependentUpon>
+    </Compile>
+  </ItemGroup>
+  <ItemGroup>
+    <InterfaceDefinition Include="MainStoryboard_iPhone.storyboard" />
+    <InterfaceDefinition Include="MainStoryboard_iPad.storyboard" />
+  </ItemGroup>
+  <Import Project="$(MSBuildBinPath)\Microsoft.CSharp.targets" />
+  <ItemGroup>
+    <Folder Include="Html\" />
+    <Folder Include="Controllers\" />
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="..\..\index.html">
+      <Link>Html\index.html</Link>
+    </Content>
+    <Content Include="..\..\js\animframe_polyfill.js">
+      <Link>Html\js\animframe_polyfill.js</Link>
+    </Content>
+    <Content Include="..\..\js\application.js">
+      <Link>Html\js\application.js</Link>
+    </Content>
+    <Content Include="..\..\js\game_manager.js">
+      <Link>Html\js\game_manager.js</Link>
+    </Content>
+    <Content Include="..\..\js\grid.js">
+      <Link>Html\js\grid.js</Link>
+    </Content>
+    <Content Include="..\..\js\html_actuator.js">
+      <Link>Html\js\html_actuator.js</Link>
+    </Content>
+    <Content Include="..\..\js\keyboard_input_manager.js">
+      <Link>Html\js\keyboard_input_manager.js</Link>
+    </Content>
+    <Content Include="..\..\js\local_score_manager.js">
+      <Link>Html\js\local_score_manager.js</Link>
+    </Content>
+    <Content Include="..\..\js\tile.js">
+      <Link>Html\js\tile.js</Link>
+    </Content>
+    <Content Include="..\..\meta\apple-touch-icon.png">
+      <Link>Html\meta\apple-touch-icon.png</Link>
+    </Content>
+    <Content Include="..\..\style\main.css">
+      <Link>Html\style\main.css</Link>
+    </Content>
+    <Content Include="..\..\style\fonts\ClearSans-Bold-webfont.eot">
+      <Link>Html\style\fonts\ClearSans-Bold-webfont.eot</Link>
+    </Content>
+    <Content Include="..\..\style\fonts\ClearSans-Bold-webfont.svg">
+      <Link>Html\style\fonts\ClearSans-Bold-webfont.svg</Link>
+    </Content>
+    <Content Include="..\..\style\fonts\ClearSans-Bold-webfont.woff">
+      <Link>Html\style\fonts\ClearSans-Bold-webfont.woff</Link>
+    </Content>
+    <Content Include="..\..\style\fonts\ClearSans-Light-webfont.eot">
+      <Link>Html\style\fonts\ClearSans-Light-webfont.eot</Link>
+    </Content>
+    <Content Include="..\..\style\fonts\ClearSans-Light-webfont.svg">
+      <Link>Html\style\fonts\ClearSans-Light-webfont.svg</Link>
+    </Content>
+    <Content Include="..\..\style\fonts\ClearSans-Light-webfont.woff">
+      <Link>Html\style\fonts\ClearSans-Light-webfont.woff</Link>
+    </Content>
+    <Content Include="..\..\style\fonts\ClearSans-Regular-webfont.eot">
+      <Link>Html\style\fonts\ClearSans-Regular-webfont.eot</Link>
+    </Content>
+    <Content Include="..\..\style\fonts\ClearSans-Regular-webfont.svg">
+      <Link>Html\style\fonts\ClearSans-Regular-webfont.svg</Link>
+    </Content>
+    <Content Include="..\..\style\fonts\ClearSans-Regular-webfont.woff">
+      <Link>Html\style\fonts\ClearSans-Regular-webfont.woff</Link>
+    </Content>
+  </ItemGroup>
+</Project>
