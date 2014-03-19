@@ -177,5 +177,8 @@
     <Content Include="..\..\style\fonts\ClearSans-Regular-webfont.woff">
       <Link>Html\style\fonts\ClearSans-Regular-webfont.woff</Link>
     </Content>
+    <Content Include="..\..\style\fonts\clear-sans.css">
+      <Link>Html\style\fonts\clear-sans.css</Link>
+    </Content>
   </ItemGroup>
 </Project>
