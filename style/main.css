@@ -200,7 +200,8 @@ hr {
 
 .grid-container {
   position: absolute;
-  z-index: 1; }
+  z-index: 1;
+  padding-bottom: 500px; }
 
 .grid-row {
   margin-bottom: 15px; }
@@ -566,7 +567,8 @@ hr {
 
   .grid-container {
     position: absolute;
-    z-index: 1; }
+    z-index: 1;
+    padding-bottom: 500px; }
 
   .grid-row {
     margin-bottom: 10px; }
