@@ -20,14 +20,14 @@ namespace TwentyFourtyEight
 		
 		void ReleaseDesignerOutlets ()
 		{
-			if (_webView != null) {
-				_webView.Dispose ();
-				_webView = null;
-			}
-
 			if (_ad != null) {
 				_ad.Dispose ();
 				_ad = null;
+			}
+
+			if (_webView != null) {
+				_webView.Dispose ();
+				_webView = null;
 			}
 		}
 	}
