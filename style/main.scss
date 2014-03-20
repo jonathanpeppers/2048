@@ -524,3 +524,13 @@ hr {
     }
   }
 }
+
+@mixin restart-button {
+  height: 30px;
+  line-height: 32px;
+}
+
+.restart-button {
+  @include button;
+  @include restart-button;
+}
