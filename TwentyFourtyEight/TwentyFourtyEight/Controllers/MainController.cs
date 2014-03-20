@@ -15,11 +15,24 @@ namespace TwentyFourtyEight
         {
             base.ViewDidLoad();
 
+            _ad.Alpha = 0;
             _webView.ScrollView.ScrollEnabled =
                 _webView.ScrollView.Bounces = false;
             _webView.LoadError += (sender, e) =>
             {
                 Console.WriteLine("LoadError: " + e.Error.LocalizedDescription);
+            };
+            _ad.AdLoaded += (sender, e) =>
+            {
+                Console.WriteLine("Ad loaded!");
+
+                UIView.Animate(0.3, 0, UIViewAnimationOptions.CurveEaseInOut, () => _ad.Alpha = 1, null);
+            };
+            _ad.FailedToReceiveAd += (sender, e) =>
+            {
+                Console.WriteLine("Ad failed: " + e.Error.LocalizedDescription);
+
+                _ad.Alpha = 0;
             };
         }
 

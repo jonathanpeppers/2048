@@ -13,6 +13,9 @@ namespace TwentyFourtyEight
 	partial class MainController
 	{
 		[Outlet]
+		MonoTouch.iAd.ADBannerView _ad { get; set; }
+
+		[Outlet]
 		MonoTouch.UIKit.UIWebView _webView { get; set; }
 		
 		void ReleaseDesignerOutlets ()
@@ -20,6 +23,11 @@ namespace TwentyFourtyEight
 			if (_webView != null) {
 				_webView.Dispose ();
 				_webView = null;
+			}
+
+			if (_ad != null) {
+				_ad.Dispose ();
+				_ad = null;
 			}
 		}
 	}
