@@ -1,5 +1,6 @@
 using System;
 using System.Drawing;
+using System.Threading.Tasks;
 using MonoTouch.Foundation;
 using MonoTouch.UIKit;
 
@@ -7,7 +8,8 @@ namespace TwentyFourtyEight
 {
     public partial class MainController : UIViewController
     {
-        public bool _loaded = false;
+        private bool _loaded = false;
+        private bool _animated = false;
 
         public MainController(IntPtr handle) : base(handle)
         {
@@ -37,6 +39,8 @@ namespace TwentyFourtyEight
             _webView.LoadFinished += (sender, e) =>
             {
                 Console.WriteLine("LoadFinished: " + _webView.Request.Url.AbsoluteString);
+
+                HideSplash();
             };
             _ad.AdLoaded += (sender, e) =>
             {
@@ -52,7 +56,7 @@ namespace TwentyFourtyEight
             };
         }
 
-        public override void ViewWillAppear(bool animated)
+        public async override void ViewWillAppear(bool animated)
         {
             base.ViewWillAppear(animated);
 
@@ -60,6 +64,20 @@ namespace TwentyFourtyEight
             var request = new NSUrlRequest(url);
 
             _webView.LoadRequest(request);
+
+            UIView.SetAnimationCurve(UIViewAnimationCurve.EaseInOut);
+
+            await UIView.AnimateAsync(.5, () =>
+            {
+                var frame = _numbers.Frame;
+                frame.Y = (View.Frame.Height - _numbers.Frame.Height) / 2;
+                _numbers.Frame = frame;
+            });
+
+            await Task.Delay(500);
+
+            _animated = true;
+            HideSplash();
         }
 
         public override bool PrefersStatusBarHidden()
@@ -75,6 +93,14 @@ namespace TwentyFourtyEight
         public override UIInterfaceOrientationMask GetSupportedInterfaceOrientations()
         {
             return UIInterfaceOrientationMask.Portrait;
+        }
+
+        private void HideSplash()
+        {
+            if (_loaded && _animated)
+            {
+                UIView.Animate(.3, 0, UIViewAnimationOptions.CurveEaseInOut, () => _splash.Alpha = 0, _splash.RemoveFromSuperview);
+            }
         }
     }
 }
