@@ -7,6 +7,8 @@ namespace TwentyFourtyEight
 {
     public partial class MainController : UIViewController
     {
+        public bool _loaded = false;
+
         public MainController(IntPtr handle) : base(handle)
         {
         }
@@ -18,9 +20,23 @@ namespace TwentyFourtyEight
             _ad.Alpha = 0;
             _webView.ScrollView.ScrollEnabled =
                 _webView.ScrollView.Bounces = false;
+            _webView.ShouldStartLoad = (webView, request, type) =>
+            {
+                if (!_loaded)
+                {
+                    _loaded = true;
+                    return true;
+                }
+
+                return false;
+            };
             _webView.LoadError += (sender, e) =>
             {
                 Console.WriteLine("LoadError: " + e.Error.LocalizedDescription);
+            };
+            _webView.LoadFinished += (sender, e) =>
+            {
+                Console.WriteLine("LoadFinished: " + _webView.Request.Url.AbsoluteString);
             };
             _ad.AdLoaded += (sender, e) =>
             {
