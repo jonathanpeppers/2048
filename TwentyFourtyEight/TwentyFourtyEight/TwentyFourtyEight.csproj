@@ -150,9 +150,6 @@
     <Content Include="..\..\js\tile.js">
       <Link>Html\js\tile.js</Link>
     </Content>
-    <Content Include="..\..\meta\apple-touch-icon.png">
-      <Link>Html\meta\apple-touch-icon.png</Link>
-    </Content>
     <Content Include="..\..\style\main.css">
       <Link>Html\style\main.css</Link>
     </Content>
