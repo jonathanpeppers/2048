@@ -13,10 +13,34 @@ namespace TwentyFourtyEight
 	partial class MainController
 	{
 		[Outlet]
+		MonoTouch.iAd.ADBannerView _ad { get; set; }
+
+		[Outlet]
+		MonoTouch.UIKit.UIView _numbers { get; set; }
+
+		[Outlet]
+		MonoTouch.UIKit.UIView _splash { get; set; }
+
+		[Outlet]
 		MonoTouch.UIKit.UIWebView _webView { get; set; }
 		
 		void ReleaseDesignerOutlets ()
 		{
+			if (_ad != null) {
+				_ad.Dispose ();
+				_ad = null;
+			}
+
+			if (_numbers != null) {
+				_numbers.Dispose ();
+				_numbers = null;
+			}
+
+			if (_splash != null) {
+				_splash.Dispose ();
+				_splash = null;
+			}
+
 			if (_webView != null) {
 				_webView.Dispose ();
 				_webView = null;
