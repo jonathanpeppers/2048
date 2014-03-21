@@ -19,6 +19,12 @@ namespace TwentyFourtyEight
         {
             base.ViewDidLoad();
 
+            var font = UIFont.FromName("ClearSans-Bold", 60);
+            _2.Font =
+                _0.Font =
+                _4.Font =
+                _8.Font = font;
+
             _ad.Alpha = 0;
             _webView.ScrollView.ScrollEnabled =
                 _webView.ScrollView.Bounces = false;
@@ -65,16 +71,37 @@ namespace TwentyFourtyEight
 
             _webView.LoadRequest(request);
 
+            //Start out 0 and 8 from bottom
+            {
+                var frame = _0.Frame;
+                frame.Y = View.Frame.Height;
+                _0.Frame = frame;
+
+                frame = _8.Frame;
+                frame.Y = View.Frame.Height;
+                _8.Frame = frame;
+            }
+
             UIView.SetAnimationCurve(UIViewAnimationCurve.EaseInOut);
 
             await UIView.AnimateAsync(.5, () =>
             {
-                var frame = _numbers.Frame;
-                frame.Y = (View.Frame.Height - _numbers.Frame.Height) / 2;
-                _numbers.Frame = frame;
-            });
+                var frame = _2.Frame;
+                frame.Y = (View.Frame.Height - _2.Frame.Height) / 2;
+                _2.Frame = frame;
 
-            await Task.Delay(500);
+                frame = _0.Frame;
+                frame.Y = (View.Frame.Height - _0.Frame.Height) / 2;
+                _0.Frame = frame;
+
+                frame = _4.Frame;
+                frame.Y = (View.Frame.Height - _4.Frame.Height) / 2;
+                _4.Frame = frame;
+
+                frame = _8.Frame;
+                frame.Y = (View.Frame.Height - _8.Frame.Height) / 2;
+                _8.Frame = frame;
+            });
 
             _animated = true;
             HideSplash();
@@ -95,10 +122,12 @@ namespace TwentyFourtyEight
             return UIInterfaceOrientationMask.Portrait;
         }
 
-        private void HideSplash()
+        private async void HideSplash()
         {
             if (_loaded && _animated)
             {
+                await Task.Delay(1000);
+
                 UIView.Animate(.3, 0, UIViewAnimationOptions.CurveEaseInOut, () => _splash.Alpha = 0, _splash.RemoveFromSuperview);
             }
         }
