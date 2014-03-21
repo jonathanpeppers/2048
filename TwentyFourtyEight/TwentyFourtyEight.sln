@@ -3,6 +3,8 @@ Microsoft Visual Studio Solution File, Format Version 11.00
 # Visual Studio 2010
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "TwentyFourtyEight", "TwentyFourtyEight\TwentyFourtyEight.csproj", "{0D7C535A-82A2-4A83-BFCD-486A0A38F108}"
 EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Flappy.TwentyFourtyEight", "Flappy.TwentyFourtyEight\Flappy.TwentyFourtyEight.csproj", "{0D7C535A-82A2-4A83-BFCD-486A0A38F121}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|iPhoneSimulator = Debug|iPhoneSimulator
@@ -25,8 +27,20 @@ Global
 		{0D7C535A-82A2-4A83-BFCD-486A0A38F108}.Release|iPhone.Build.0 = Release|iPhone
 		{0D7C535A-82A2-4A83-BFCD-486A0A38F108}.Release|iPhoneSimulator.ActiveCfg = Release|iPhoneSimulator
 		{0D7C535A-82A2-4A83-BFCD-486A0A38F108}.Release|iPhoneSimulator.Build.0 = Release|iPhoneSimulator
+		{0D7C535A-82A2-4A83-BFCD-486A0A38F121}.Ad-Hoc|iPhone.ActiveCfg = Ad-Hoc|iPhone
+		{0D7C535A-82A2-4A83-BFCD-486A0A38F121}.Ad-Hoc|iPhone.Build.0 = Ad-Hoc|iPhone
+		{0D7C535A-82A2-4A83-BFCD-486A0A38F121}.AppStore|iPhone.ActiveCfg = AppStore|iPhone
+		{0D7C535A-82A2-4A83-BFCD-486A0A38F121}.AppStore|iPhone.Build.0 = AppStore|iPhone
+		{0D7C535A-82A2-4A83-BFCD-486A0A38F121}.Debug|iPhone.ActiveCfg = Debug|iPhone
+		{0D7C535A-82A2-4A83-BFCD-486A0A38F121}.Debug|iPhone.Build.0 = Debug|iPhone
+		{0D7C535A-82A2-4A83-BFCD-486A0A38F121}.Debug|iPhoneSimulator.ActiveCfg = Debug|iPhoneSimulator
+		{0D7C535A-82A2-4A83-BFCD-486A0A38F121}.Debug|iPhoneSimulator.Build.0 = Debug|iPhoneSimulator
+		{0D7C535A-82A2-4A83-BFCD-486A0A38F121}.Release|iPhone.ActiveCfg = Release|iPhone
+		{0D7C535A-82A2-4A83-BFCD-486A0A38F121}.Release|iPhone.Build.0 = Release|iPhone
+		{0D7C535A-82A2-4A83-BFCD-486A0A38F121}.Release|iPhoneSimulator.ActiveCfg = Release|iPhoneSimulator
+		{0D7C535A-82A2-4A83-BFCD-486A0A38F121}.Release|iPhoneSimulator.Build.0 = Release|iPhoneSimulator
 	EndGlobalSection
 	GlobalSection(MonoDevelopProperties) = preSolution
-		StartupItem = TwentyFourtyEight\TwentyFourtyEight.csproj
+		StartupItem = Flappy.TwentyFourtyEight\Flappy.TwentyFourtyEight.csproj
 	EndGlobalSection
 EndGlobal

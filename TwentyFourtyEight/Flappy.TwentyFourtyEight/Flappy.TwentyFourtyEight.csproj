@@ -5,7 +5,7 @@
     <Platform Condition=" '$(Platform)' == '' ">iPhoneSimulator</Platform>
     <ProductVersion>10.0.0</ProductVersion>
     <SchemaVersion>2.0</SchemaVersion>
-    <ProjectGuid>{0D7C535A-82A2-4A83-BFCD-486A0A38F108}</ProjectGuid>
+    <ProjectGuid>{0D7C535A-82A2-4A83-BFCD-486A0A38F121}</ProjectGuid>
     <ProjectTypeGuids>{6BC8ED88-2882-458C-8E55-DFD12B67127B};{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}</ProjectTypeGuids>
     <OutputType>Exe</OutputType>
     <RootNamespace>TwentyFourtyEight</RootNamespace>
@@ -115,115 +115,119 @@
     <Reference Include="monotouch" />
   </ItemGroup>
   <ItemGroup>
-    <BundleResource Include="Resources\Default-568h%402x.png" />
-    <BundleResource Include="Resources\Icon-40.png" />
-    <BundleResource Include="Resources\Icon-40%402x.png" />
-    <BundleResource Include="Resources\Icon-60.png" />
-    <BundleResource Include="Resources\Icon-60%402x.png" />
-    <BundleResource Include="Resources\Icon-72.png" />
-    <BundleResource Include="Resources\Icon-72%402x.png" />
-    <BundleResource Include="Resources\Icon-76.png" />
-    <BundleResource Include="Resources\Icon-76%402x.png" />
-    <BundleResource Include="Resources\Icon-Small-50.png" />
-    <BundleResource Include="Resources\Icon-Small-50%402x.png" />
-    <BundleResource Include="Resources\Icon-Small.png" />
-    <BundleResource Include="Resources\Icon-Small%402x.png" />
-    <BundleResource Include="Resources\Icon.png" />
-    <BundleResource Include="Resources\Icon%402x.png" />
-    <BundleResource Include="Resources\ClearSans-Bold.ttf" />
-    <BundleResource Include="Resources\Default-Portrait.png" />
-    <BundleResource Include="Resources\Default-Portrait%402x.png" />
-    <BundleResource Include="Resources\Default.png" />
-    <BundleResource Include="Resources\Default%402x.png" />
-  </ItemGroup>
-  <ItemGroup>
     <None Include="Info.plist" />
     <None Include="Entitlements.plist" />
-    <None Include="Html\howto.html" />
-    <None Include="..\..\style\helpers.scss">
-      <Link>Html\style\helpers.scss</Link>
-    </None>
-    <None Include="..\..\style\main.scss">
-      <Link>Html\style\main.scss</Link>
-    </None>
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="Main.cs" />
-    <Compile Include="AppDelegate.cs" />
-    <Compile Include="Controllers\MainController.cs" />
-    <Compile Include="Controllers\MainController.designer.cs">
-      <DependentUpon>MainController.cs</DependentUpon>
+    <Compile Include="..\TwentyFourtyEight\AppDelegate.cs">
+      <Link>AppDelegate.cs</Link>
     </Compile>
-  </ItemGroup>
-  <ItemGroup>
-    <InterfaceDefinition Include="MainStoryboard_iPhone.storyboard" />
-    <InterfaceDefinition Include="MainStoryboard_iPad.storyboard" />
+    <Compile Include="..\TwentyFourtyEight\Main.cs">
+      <Link>Main.cs</Link>
+    </Compile>
+    <Compile Include="..\TwentyFourtyEight\Controllers\MainController.cs">
+      <Link>Controllers\MainController.cs</Link>
+    </Compile>
+    <Compile Include="..\TwentyFourtyEight\Controllers\MainController.designer.cs">
+      <Link>Controllers\MainController.designer.cs</Link>
+    </Compile>
   </ItemGroup>
   <Import Project="$(MSBuildBinPath)\Microsoft.CSharp.targets" />
   <ItemGroup>
     <Folder Include="Html\" />
     <Folder Include="Controllers\" />
+    <Folder Include="Resources\" />
   </ItemGroup>
   <ItemGroup>
-    <Content Include="..\..\index.html">
-      <Link>Html\index.html</Link>
-    </Content>
-    <Content Include="..\..\js\animframe_polyfill.js">
-      <Link>Html\js\animframe_polyfill.js</Link>
-    </Content>
-    <Content Include="..\..\js\application.js">
-      <Link>Html\js\application.js</Link>
-    </Content>
-    <Content Include="..\..\js\game_manager.js">
-      <Link>Html\js\game_manager.js</Link>
-    </Content>
-    <Content Include="..\..\js\grid.js">
-      <Link>Html\js\grid.js</Link>
-    </Content>
-    <Content Include="..\..\js\html_actuator.js">
-      <Link>Html\js\html_actuator.js</Link>
-    </Content>
-    <Content Include="..\..\js\keyboard_input_manager.js">
-      <Link>Html\js\keyboard_input_manager.js</Link>
-    </Content>
-    <Content Include="..\..\js\local_score_manager.js">
-      <Link>Html\js\local_score_manager.js</Link>
-    </Content>
-    <Content Include="..\..\js\tile.js">
-      <Link>Html\js\tile.js</Link>
-    </Content>
-    <Content Include="..\..\style\main.css">
-      <Link>Html\style\main.css</Link>
-    </Content>
-    <Content Include="..\..\style\fonts\ClearSans-Bold-webfont.eot">
-      <Link>Html\style\fonts\ClearSans-Bold-webfont.eot</Link>
-    </Content>
-    <Content Include="..\..\style\fonts\ClearSans-Bold-webfont.svg">
-      <Link>Html\style\fonts\ClearSans-Bold-webfont.svg</Link>
-    </Content>
-    <Content Include="..\..\style\fonts\ClearSans-Bold-webfont.woff">
-      <Link>Html\style\fonts\ClearSans-Bold-webfont.woff</Link>
-    </Content>
-    <Content Include="..\..\style\fonts\ClearSans-Light-webfont.eot">
-      <Link>Html\style\fonts\ClearSans-Light-webfont.eot</Link>
-    </Content>
-    <Content Include="..\..\style\fonts\ClearSans-Light-webfont.svg">
-      <Link>Html\style\fonts\ClearSans-Light-webfont.svg</Link>
-    </Content>
-    <Content Include="..\..\style\fonts\ClearSans-Light-webfont.woff">
-      <Link>Html\style\fonts\ClearSans-Light-webfont.woff</Link>
-    </Content>
-    <Content Include="..\..\style\fonts\ClearSans-Regular-webfont.eot">
-      <Link>Html\style\fonts\ClearSans-Regular-webfont.eot</Link>
-    </Content>
-    <Content Include="..\..\style\fonts\ClearSans-Regular-webfont.svg">
-      <Link>Html\style\fonts\ClearSans-Regular-webfont.svg</Link>
-    </Content>
-    <Content Include="..\..\style\fonts\ClearSans-Regular-webfont.woff">
-      <Link>Html\style\fonts\ClearSans-Regular-webfont.woff</Link>
-    </Content>
-    <Content Include="..\..\style\fonts\clear-sans.css">
-      <Link>Html\style\fonts\clear-sans.css</Link>
-    </Content>
+    <InterfaceDefinition Include="..\TwentyFourtyEight\MainStoryboard_iPad.storyboard">
+      <Link>MainStoryboard_iPad.storyboard</Link>
+    </InterfaceDefinition>
+    <InterfaceDefinition Include="..\TwentyFourtyEight\MainStoryboard_iPhone.storyboard">
+      <Link>MainStoryboard_iPhone.storyboard</Link>
+    </InterfaceDefinition>
+  </ItemGroup>
+  <ItemGroup>
+    <BundleResource Include="..\TwentyFourtyEight\Resources\ClearSans-Bold.ttf">
+      <Link>Resources\ClearSans-Bold.ttf</Link>
+    </BundleResource>
+    <BundleResource Include="..\TwentyFourtyEight\Resources\Default-568h%402x.png">
+      <Link>Resources\Default-568h%402x.png</Link>
+    </BundleResource>
+    <BundleResource Include="..\TwentyFourtyEight\Resources\Default-Portrait.png">
+      <Link>Resources\Default-Portrait.png</Link>
+    </BundleResource>
+    <BundleResource Include="..\TwentyFourtyEight\Resources\Default-Portrait%402x.png">
+      <Link>Resources\Default-Portrait%402x.png</Link>
+    </BundleResource>
+    <BundleResource Include="..\TwentyFourtyEight\Resources\Default.png">
+      <Link>Resources\Default.png</Link>
+    </BundleResource>
+    <BundleResource Include="..\TwentyFourtyEight\Resources\Default%402x.png">
+      <Link>Resources\Default%402x.png</Link>
+    </BundleResource>
+    <BundleResource Include="..\TwentyFourtyEight\Resources\Icon-40.png">
+      <Link>Resources\Icon-40.png</Link>
+    </BundleResource>
+    <BundleResource Include="..\TwentyFourtyEight\Resources\Icon-40%402x.png">
+      <Link>Resources\Icon-40%402x.png</Link>
+    </BundleResource>
+    <BundleResource Include="..\TwentyFourtyEight\Resources\Icon-60.png">
+      <Link>Resources\Icon-60.png</Link>
+    </BundleResource>
+    <BundleResource Include="..\TwentyFourtyEight\Resources\Icon-60%402x.png">
+      <Link>Resources\Icon-60%402x.png</Link>
+    </BundleResource>
+    <BundleResource Include="..\TwentyFourtyEight\Resources\Icon-72.png">
+      <Link>Resources\Icon-72.png</Link>
+    </BundleResource>
+    <BundleResource Include="..\TwentyFourtyEight\Resources\Icon-72%402x.png">
+      <Link>Resources\Icon-72%402x.png</Link>
+    </BundleResource>
+    <BundleResource Include="..\TwentyFourtyEight\Resources\Icon-76.png">
+      <Link>Resources\Icon-76.png</Link>
+    </BundleResource>
+    <BundleResource Include="..\TwentyFourtyEight\Resources\Icon-76%402x.png">
+      <Link>Resources\Icon-76%402x.png</Link>
+    </BundleResource>
+    <BundleResource Include="..\TwentyFourtyEight\Resources\Icon-Small-50.png">
+      <Link>Resources\Icon-Small-50.png</Link>
+    </BundleResource>
+    <BundleResource Include="..\TwentyFourtyEight\Resources\Icon-Small-50%402x.png">
+      <Link>Resources\Icon-Small-50%402x.png</Link>
+    </BundleResource>
+    <BundleResource Include="..\TwentyFourtyEight\Resources\Icon-Small.png">
+      <Link>Resources\Icon-Small.png</Link>
+    </BundleResource>
+    <BundleResource Include="..\TwentyFourtyEight\Resources\Icon-Small%402x.png">
+      <Link>Resources\Icon-Small%402x.png</Link>
+    </BundleResource>
+    <BundleResource Include="..\TwentyFourtyEight\Resources\Icon.png">
+      <Link>Resources\Icon.png</Link>
+    </BundleResource>
+    <BundleResource Include="..\TwentyFourtyEight\Resources\Icon%402x.png">
+      <Link>Resources\Icon%402x.png</Link>
+    </BundleResource>
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="Html\style\fonts\clear-sans.css" />
+    <Content Include="Html\style\fonts\ClearSans-Bold-webfont.eot" />
+    <Content Include="Html\style\fonts\ClearSans-Bold-webfont.svg" />
+    <Content Include="Html\style\fonts\ClearSans-Bold-webfont.woff" />
+    <Content Include="Html\style\fonts\ClearSans-Light-webfont.eot" />
+    <Content Include="Html\style\fonts\ClearSans-Light-webfont.svg" />
+    <Content Include="Html\style\fonts\ClearSans-Light-webfont.woff" />
+    <Content Include="Html\style\fonts\ClearSans-Regular-webfont.eot" />
+    <Content Include="Html\style\fonts\ClearSans-Regular-webfont.svg" />
+    <Content Include="Html\style\fonts\ClearSans-Regular-webfont.woff" />
+    <Content Include="Html\style\main.css" />
+    <Content Include="Html\index.html" />
+    <Content Include="Html\js\animframe_polyfill.js" />
+    <Content Include="Html\js\application.js" />
+    <Content Include="Html\js\game_manager.js" />
+    <Content Include="Html\js\grid.js" />
+    <Content Include="Html\js\html_actuator.js" />
+    <Content Include="Html\js\keyboard_input_manager.js" />
+    <Content Include="Html\js\local_score_manager.js" />
+    <Content Include="Html\js\tile.js" />
   </ItemGroup>
 </Project>
