@@ -60,6 +60,18 @@ namespace TwentyFourtyEight
 
                 _ad.Alpha = 0;
             };
+
+            #if FLAPPY
+            var image = UIImage.FromFile("flappy.png");
+            var imageView = new UIImageView(new RectangleF((View.Frame.Width - 100) / 2, (View.Frame.Height - 72) / 2, 100, 72))
+            {
+                Image = image,
+            };
+            _splash.AddSubview(imageView);
+            _splash.SendSubviewToBack(imageView);
+
+            UIView.Animate(0.5, 0, UIViewAnimationOptions.CurveEaseInOut, () => imageView.Alpha = 0, null);
+            #endif
         }
 
         public async override void ViewWillAppear(bool animated)
