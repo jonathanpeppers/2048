@@ -10,6 +10,13 @@ html, body {
 body {
   margin: 80px 0; }
 
+img.flappy {
+    display: block;
+    margin-left: auto;
+    margin-right: auto;
+    margin-top: 25px;
+}
+
 .heading:after {
   content: "";
   display: block;
@@ -516,7 +523,7 @@ hr {
   h1.title {
     max-width: 1px;
     white-space: nowrap;
-    font-size: 27px;
+    font-size: 24px;
     margin-top: 15px; }
 
   .container {
