@@ -47,6 +47,20 @@ namespace TwentyFourtyEight
             {
                 Console.WriteLine("LoadFinished: " + _webView.Request.Url.AbsoluteString);
 
+                #if _8402
+                if (UIDevice.CurrentDevice.UserInterfaceIdiom == UIUserInterfaceIdiom.Phone)
+                {
+                    if (View.Frame.Height != 568)
+                    {
+                        _webView.EvaluateJavascript("document.getElementById('help').innerHTML='';");
+                    }
+                }
+                else
+                {
+                    _webView.EvaluateJavascript("document.getElementById('title').style.top='-24px'");
+                }
+                #endif
+
                 HideSplash();
             };
             _ad.AdLoaded += (sender, e) =>
