@@ -10,7 +10,7 @@
     <OutputType>Exe</OutputType>
     <RootNamespace>TwentyFourtyEight</RootNamespace>
     <IPhoneResourcePrefix>Resources</IPhoneResourcePrefix>
-    <AssemblyName>TwentyFourtyEight</AssemblyName>
+    <AssemblyName>FlappyTwentyFourtyEight</AssemblyName>
   </PropertyGroup>
   <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|iPhoneSimulator' ">
     <DebugSymbols>true</DebugSymbols>
