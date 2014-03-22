@@ -3,6 +3,7 @@ using System.Drawing;
 using System.Threading.Tasks;
 using MonoTouch.Foundation;
 using MonoTouch.UIKit;
+using MonoTouch.CoreGraphics;
 
 namespace TwentyFourtyEight
 {
@@ -71,6 +72,11 @@ namespace TwentyFourtyEight
             _splash.SendSubviewToBack(imageView);
 
             UIView.Animate(0.5, 0, UIViewAnimationOptions.CurveEaseInOut, () => imageView.Alpha = 0, null);
+            #elif _8402
+            _2.Text = "8";
+            _0.Text = "4";
+            _4.Text = "0";
+            _8.Text = "2";
             #endif
         }
 
@@ -113,6 +119,13 @@ namespace TwentyFourtyEight
                 frame = _8.Frame;
                 frame.Y = (View.Frame.Height - _8.Frame.Height) / 2;
                 _8.Frame = frame;
+
+                #if _8402
+                _2.Transform =
+                    _0.Transform =
+                    _4.Transform =
+                    _8.Transform = CGAffineTransform.MakeRotation(3.14159f);
+                #endif
             });
 
             _animated = true;
