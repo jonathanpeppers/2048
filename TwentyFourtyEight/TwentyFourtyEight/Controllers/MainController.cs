@@ -4,6 +4,7 @@ using System.Threading.Tasks;
 using MonoTouch.Foundation;
 using MonoTouch.UIKit;
 using MonoTouch.CoreGraphics;
+using ChartboostSDK;
 
 namespace TwentyFourtyEight
 {
@@ -35,6 +36,11 @@ namespace TwentyFourtyEight
                 {
                     _loaded = true;
                     return true;
+                }
+
+                if (request.Url.ToString() == "restart://")
+                {
+                    Chartboost.SharedChartboost.ShowInterstitial();
                 }
 
                 return false;

@@ -14,6 +14,7 @@ function GameManager(size, InputManager, Actuator) {
 GameManager.prototype.restart = function () {
   this.actuator.restart();
   this.setup();
+  window.location.href = 'restart://';
 };
 
 // Set up the game
