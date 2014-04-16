@@ -225,4 +225,10 @@
       <Link>Html\style\fonts\clear-sans.css</Link>
     </Content>
   </ItemGroup>
+  <ItemGroup>
+    <ProjectReference Include="..\Chartboost\Chartboost.iOS.csproj">
+      <Project>{FE7512D0-C7E2-4705-8F25-4E6F4C6B86B5}</Project>
+      <Name>Chartboost.iOS</Name>
+    </ProjectReference>
+  </ItemGroup>
 </Project>
